@@ -11,9 +11,9 @@ public class PricingResource {
     private PricingService pricingService;
 
     @GET
-    @Path("price")
+    @Path("price/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Price priceByName(@QueryParam("name") String name) {
+    public Price priceByName(@PathParam("name") String name) {
         return pricingService.findByName(name);
     }
 
