@@ -1,4 +1,4 @@
-package org.packt.swarm.pricing;
+package org.packt.swarm.petstore.pricing;
 
 import org.wildfly.swarm.Swarm;
 import org.wildfly.swarm.datasources.DatasourcesFraction;
@@ -13,7 +13,7 @@ public class Main {
                     d.xaDatasourceClass("org.postgresql.xa.PGXADataSource");
                     d.driverModuleName("org.postgresql.jdbc");
                 })
-                .dataSource("CatalogDS", (ds) -> {
+                .dataSource("PricingDS", (ds) -> {
                     ds.driverName("postgres");
                     ds.connectionUrl("jdbc:postgresql://"
                             + System.getenv("POSTGRESQL_HOST")
