@@ -6,6 +6,9 @@ import org.wildfly.swarm.datasources.DatasourcesFraction;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
+        System.out.println("HOST TO "+System.getenv("POSTGRESQL_HOST"));
+
         DatasourcesFraction datasourcesFraction = new DatasourcesFraction()
                 //1
                 .jdbcDriver("postgres", (d) -> {
