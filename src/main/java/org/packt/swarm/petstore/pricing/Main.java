@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         System.out.println("HOST TO "+System.getenv("POSTGRESQL_HOST"));
+        System.out.println("WEBHOOK TEST");
 
         DatasourcesFraction datasourcesFraction = new DatasourcesFraction()
                 //1
