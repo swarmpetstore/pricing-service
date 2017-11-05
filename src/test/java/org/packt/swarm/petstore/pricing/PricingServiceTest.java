@@ -60,6 +60,6 @@ public class PricingServiceTest {
     //4
     @Test
     public void testSearchById() {
-       Assert.assertEquals(pricingService.findByName("test-pet").getPrice(),7);
+       Assert.assertEquals(pricingService.findByName("test-pet").getPrice(),5);
     }
 }
