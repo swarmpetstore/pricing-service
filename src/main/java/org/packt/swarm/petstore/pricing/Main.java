@@ -24,7 +24,9 @@ public class Main {
                     ds.userName(System.getenv("POSTGRESQL_USER"));
                     ds.password(System.getenv("POSTGRESQL_PASSWORD"));
                 });
-        
+
+        System.out.println("PULPET TO DUUUUPAAAAA");
+
         Swarm swarm = new Swarm();
         swarm.fraction(datasourcesFraction);
 
@@ -38,7 +40,5 @@ public class Main {
                 .withRole("pies");
 
         swarm.deploy(deployment);
-
-        System.out.println("PULPET TO DUUUUPAAAAA");
     }
 }
