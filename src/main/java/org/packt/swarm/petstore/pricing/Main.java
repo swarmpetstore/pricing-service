@@ -33,10 +33,12 @@ public class Main {
         Archive<?> deployment = swarm.createDefaultDeployment();
 
         deployment.as(Secured.class)
-                .protect( "/price" )
-                .withMethod( "GET" )
-                .withRole( "pies" );
+                .protect("/price")
+                .withMethod("GET")
+                .withRole("pies");
 
-                swarm.deploy(deployment);
+        swarm.deploy(deployment);
+
+        System.out.println("PULPET TO DUUUUPAAAAA");
     }
 }
