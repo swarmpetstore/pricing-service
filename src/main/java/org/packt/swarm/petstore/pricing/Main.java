@@ -34,10 +34,7 @@ public class Main {
 
         Archive<?> deployment = swarm.createDefaultDeployment();
 
-        deployment.as(Secured.class)
-                .protect("/price")
-                .withMethod("GET")
-                .withRole("pies");
+        deployment.as(Secured.class);
 
         swarm.deploy(deployment);
     }
