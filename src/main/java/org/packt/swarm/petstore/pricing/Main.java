@@ -33,7 +33,7 @@ public class Main {
         Archive<?> deployment = swarm.createDefaultDeployment();
 
         deployment.as(Secured.class)
-                .protect( "/price" )
+                .protect( "/price/*" )
                 .withMethod( "GET" )
                 .withRole( "pies" );
 
