@@ -25,8 +25,6 @@ public class Main {
                     ds.password(System.getenv("POSTGRESQL_PASSWORD"));
                 });
 
-        System.out.println("PULPET TO DUUUUPAAAAA");
-
         Swarm swarm = new Swarm();
         swarm.fraction(datasourcesFraction);
 
@@ -34,7 +32,10 @@ public class Main {
 
         Archive<?> deployment = swarm.createDefaultDeployment();
 
-        deployment.as(Secured.class);
+        deployment.as(Secured.class)
+                .protect( "/price" )
+                .withMethod( "GET" )
+                .withRole( "customer" );
 
         swarm.deploy(deployment);
     }
