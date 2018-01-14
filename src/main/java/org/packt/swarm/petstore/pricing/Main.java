@@ -35,7 +35,7 @@ public class Main {
         deployment.as(Secured.class)
                 .protect( "/price/*" )
                 .withMethod( "GET" )
-                .withRole( "pies" );
+                .withRole( "customer" );
 
         swarm.deploy(deployment);
     }
