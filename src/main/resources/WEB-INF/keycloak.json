@@ -1,6 +1,6 @@
 {
   "realm": "petstore",
-  "auth-server-url": "http://keycloak.petstore.svc:8080/auth",
+  "auth-server-url": "https://keycloak-petstore.192.168.42.229.nip.io/auth",
   "ssl-required": "external",
   "resource": "petstore-client",
   "public-client": true
