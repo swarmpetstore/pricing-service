@@ -31,12 +31,15 @@ public class Main {
         swarm.start();
 
         Archive<?> deployment = swarm.createDefaultDeployment();
-
-        deployment.as(Secured.class);
-//                .protect( "/price/*" )
-//                .withMethod( "GET" )
-//                .withRole( "customer" );
+        secureDeployment(deployment);
 
         swarm.deploy(deployment);
+    }
+
+    private static void secureDeployment(Archive<?> deployment){
+        deployment.as(Secured.class)
+                .protect( "/price/*" )
+                .withMethod( "GET" )
+                .withRole( "customer" );
     }
 }

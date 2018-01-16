@@ -1,4 +1,4 @@
-package org.packt.swarm.petstore.pricing;
+package org.packt.swarm.petstore.pricing.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -7,8 +7,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Price")
 @NamedQueries({
-        @NamedQuery(name="Price.findByName",
-                query="SELECT p FROM Price p WHERE p.name = :name"),
+        @NamedQuery(name="Price.findByItemId",
+                query="SELECT p FROM Price p WHERE p.itemId = :itemId"),
 })
 public class Price {
 
@@ -18,8 +18,8 @@ public class Price {
     @JsonIgnore
     private int id;
 
-    @Column(length = 30)
-    private String name;
+    @Column(name="item_id")
+    private String itemId;
     @Column
     private int price;
 
@@ -31,14 +31,13 @@ public class Price {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getItemId() {
+        return itemId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
     }
-
 
     public int getPrice() {
         return price;

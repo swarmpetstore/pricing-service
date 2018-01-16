@@ -1,5 +1,7 @@
 package org.packt.swarm.petstore.pricing;
 
+import org.packt.swarm.petstore.pricing.model.Price;
+
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,12 +18,10 @@ public class PricingResource {
     private PricingService pricingService;
 
     @GET
-    @Path("price/{name}")
+    @Path("price/{item_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Price priceByName(@PathParam("name") String name, @Context SecurityContext securityContext) {
-        System.out.println("IDZIE PRICE BY NAME");
-        System.out.println("PRINCIPAL TO "+securityContext.getUserPrincipal());
-        return pricingService.findByName(name);
+    public Price priceByName(@PathParam("item_id") String itemId, @Context SecurityContext securityContext) {
+        return pricingService.findByItemId(itemId);
     }
 
 }
