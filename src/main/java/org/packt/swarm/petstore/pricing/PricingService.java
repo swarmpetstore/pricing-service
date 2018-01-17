@@ -15,6 +15,7 @@ public class PricingService {
     private EntityManager em;
 
     public Price findByItemId(String itemId) {
+        System.out.println("SZUKAM ITEMA "+itemId);
         List<Price> result = em.createNamedQuery("Price.findByItemId", Price.class).setParameter("itemId", itemId).getResultList();
         if(result.isEmpty()){
             return null;
