@@ -68,11 +68,6 @@
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>keycloak</artifactId>
-            <version>${version.wildfly.swarm}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.swarm</groupId>
             <artifactId>jpa</artifactId>
             <version>${version.wildfly.swarm}</version>
         </dependency>

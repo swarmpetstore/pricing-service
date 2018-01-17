@@ -3,7 +3,6 @@ package org.packt.swarm.petstore.pricing;
 import org.jboss.shrinkwrap.api.Archive;
 import org.wildfly.swarm.Swarm;
 import org.wildfly.swarm.datasources.DatasourcesFraction;
-import org.wildfly.swarm.keycloak.Secured;
 
 public class Main {
 
@@ -31,15 +30,7 @@ public class Main {
         swarm.start();
 
         Archive<?> deployment = swarm.createDefaultDeployment();
-        secureDeployment(deployment);
 
         swarm.deploy(deployment);
-    }
-
-    private static void secureDeployment(Archive<?> deployment){
-        deployment.as(Secured.class)
-                .protect( "/price/*" )
-                .withMethod( "GET" )
-                .withRole( "customer" );
     }
 }
