@@ -24,14 +24,14 @@ public class PricingResource {
     public Response priceByName(@PathParam("item_id") String itemId) {
         try {
             Price result = pricingService.findByItemId(itemId);
-            if(result != null) {
+            if (result != null) {
                 return Response.ok(result).build();
             } else {
                 return Response.status(Response.Status.NOT_FOUND).build();
             }
         } catch (Exception e) {
-        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-    }
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+        }
     }
 
 }

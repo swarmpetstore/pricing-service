@@ -4,9 +4,7 @@
         version="2.1"
         xmlns="http://xmlns.jcp.org/xml/ns/persistence"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <!-- 1 -->
     <persistence-unit name="PricingPU" transaction-type="JTA">
-        <!-- 2 -->
         <jta-data-source>java:jboss/datasources/PricingDS</jta-data-source>
     </persistence-unit>
 </persistence>

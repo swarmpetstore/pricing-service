@@ -20,6 +20,7 @@ public class Price {
 
     @Column(name="item_id")
     private String itemId;
+
     @Column
     private int price;
 
