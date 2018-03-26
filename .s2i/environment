@@ -1,4 +1,0 @@
-POSTGRESQL_HOST=pricingdb.petstore.svc
-POSTGRESQL_USER=pricing
-POSTGRESQL_PASSWORD=pricing
-POSTGRESQL_SCHEMA=pricingdb
